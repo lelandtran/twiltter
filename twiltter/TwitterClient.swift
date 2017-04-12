@@ -24,8 +24,8 @@ class TwitterClient: BDBOAuth1SessionManager {
         return Static.instance!
     }
     
-    func loginWith(completionHandler : @escaping (_ user : User?, _ error : Error?) -> Void) {
-        loginCompletion = completionHandler
+    func login(withCompletion : @escaping (_ user : User?, _ error : Error?) -> Void) {
+        loginCompletion = withCompletion
         
         TwitterClient.sharedInstance.requestSerializer.removeAccessToken()
         TwitterClient.sharedInstance.fetchRequestToken(withPath: "oauth/request_token", method: "GET", callbackURL: NSURL(string:"cptwitterdemo://oauth") as! URL, scope: nil, success: { (requestToken : BDBOAuth1Credential?) -> Void in
@@ -41,14 +41,30 @@ class TwitterClient: BDBOAuth1SessionManager {
         }
     }
     
+    func homeTimeline(withParams : NSDictionary?, completion : @escaping (_ tweets: [Tweet]?, _ error: Error?) -> Void){
+        self.get("1.1/statuses/home_timeline.json", parameters: nil, progress: nil, success: { (operation :URLSessionDataTask, response : Any?) in
+            //                print("home timeline \(response)")
+            let tweets = Tweet.tweetsWith(array: (response as! [NSDictionary]))
+            for tweet in tweets {
+                print("tweet.text: \(tweet.text), created: \(tweet.createdAt!)")
+            }
+            completion(tweets, nil)
+        }, failure: { (operation :URLSessionDataTask?, error:Error) in
+            print("error in getting home timeline")
+            self.loginCompletion?(nil, error)
+            completion(nil, error)
+        })
+    }
+    
     func open(url : URL){
         fetchAccessToken(withPath: "oauth/access_token", method: "POST", requestToken: BDBOAuth1Credential(queryString:url.query), success: {(accessToken : BDBOAuth1Credential?) -> Void in
             print("Got the access token")
             TwitterClient.sharedInstance.requestSerializer.saveAccessToken(accessToken)
             
-            self.get("1.1/account/verify_credentials.json", parameters: nil, progress: nil, success: { (operation : URLSessionDataTask, response : Any) -> Void in
+            TwitterClient.sharedInstance.get("1.1/account/verify_credentials.json", parameters: nil, progress: nil, success: { (operation : URLSessionDataTask, response : Any) -> Void in
                 //                print("user : \(response)")
-                var user = User(dictionary: response as! NSDictionary)
+                let user = User(dictionary: response as! NSDictionary)
+                User.currentUser = user
                 print("user.name: \(user.name!)")
                 self.loginCompletion?(user, nil)
             }) { (operation : URLSessionDataTask?, error : Error) -> Void in
@@ -56,16 +72,7 @@ class TwitterClient: BDBOAuth1SessionManager {
                 self.loginCompletion?(nil, error)
             }
             
-            self.get("1.1/statuses/home_timeline.json", parameters: nil, progress: nil, success: { (operation :URLSessionDataTask, response : Any?) in
-                //                print("home timeline \(response)")
-                var tweets = Tweet.tweetsWith(array: (response as! [NSDictionary]))
-                for tweet in tweets {
-                    print("tweet.text: \(tweet.text), created: \(tweet.createdAt!)")
-                }
-            }, failure: { (operation :URLSessionDataTask?, error:Error) in
-                print("error in getting home timeline")
-                self.loginCompletion?(nil, error)
-            })
+            
         }) { (error : Error?) -> Void in
             print("failed to receive access token")
             self.loginCompletion?(nil, error)
