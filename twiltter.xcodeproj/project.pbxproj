@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		239A01B317CD4CD814CEF1D5 /* Pods_twiltter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF65724A2507797CB599ECBC /* Pods_twiltter.framework */; };
+		CB6C9CD61E9DB04200BE9D0C /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6C9CD51E9DB04200BE9D0C /* TwitterClient.swift */; };
 		CB74402C1E9C8FF0000CF1D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74402B1E9C8FF0000CF1D3 /* AppDelegate.swift */; };
 		CB74402E1E9C8FF0000CF1D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74402D1E9C8FF0000CF1D3 /* ViewController.swift */; };
 		CB7440311E9C8FF0000CF1D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB74402F1E9C8FF0000CF1D3 /* Main.storyboard */; };
@@ -34,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BA547AC5981CB555083CC01 /* Pods-twiltter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twiltter.release.xcconfig"; path = "Pods/Target Support Files/Pods-twiltter/Pods-twiltter.release.xcconfig"; sourceTree = "<group>"; };
+		2CAEDD13891B616F046CB67E /* Pods-twiltter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twiltter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twiltter/Pods-twiltter.debug.xcconfig"; sourceTree = "<group>"; };
+		CB6C9CD51E9DB04200BE9D0C /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
 		CB7440281E9C8FF0000CF1D3 /* twiltter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twiltter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB74402B1E9C8FF0000CF1D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB74402D1E9C8FF0000CF1D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +52,7 @@
 		CB7440471E9C8FF0000CF1D3 /* twiltterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = twiltterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB74404B1E9C8FF0000CF1D3 /* twiltterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twiltterUITests.swift; sourceTree = "<group>"; };
 		CB74404D1E9C8FF0000CF1D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF65724A2507797CB599ECBC /* Pods_twiltter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_twiltter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				239A01B317CD4CD814CEF1D5 /* Pods_twiltter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +81,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		59EA20C0D0C3350A8A3A1D11 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2CAEDD13891B616F046CB67E /* Pods-twiltter.debug.xcconfig */,
+				0BA547AC5981CB555083CC01 /* Pods-twiltter.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ABA1AB2809CCF8F65067E6B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF65724A2507797CB599ECBC /* Pods_twiltter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB6C9CD41E9DB00900BE9D0C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				CB6C9CD51E9DB04200BE9D0C /* TwitterClient.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
 		CB74401F1E9C8FEF000CF1D3 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +113,8 @@
 				CB74403F1E9C8FF0000CF1D3 /* twiltterTests */,
 				CB74404A1E9C8FF0000CF1D3 /* twiltterUITests */,
 				CB7440291E9C8FF0000CF1D3 /* Products */,
+				59EA20C0D0C3350A8A3A1D11 /* Pods */,
+				ABA1AB2809CCF8F65067E6B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +131,7 @@
 		CB74402A1E9C8FF0000CF1D3 /* twiltter */ = {
 			isa = PBXGroup;
 			children = (
+				CB6C9CD41E9DB00900BE9D0C /* API */,
 				CB74402B1E9C8FF0000CF1D3 /* AppDelegate.swift */,
 				CB74402D1E9C8FF0000CF1D3 /* ViewController.swift */,
 				CB74402F1E9C8FF0000CF1D3 /* Main.storyboard */,
@@ -132,9 +167,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB7440501E9C8FF0000CF1D3 /* Build configuration list for PBXNativeTarget "twiltter" */;
 			buildPhases = (
+				E174C3F52E5EC36FB6FFE51C /* [CP] Check Pods Manifest.lock */,
 				CB7440241E9C8FEF000CF1D3 /* Sources */,
 				CB7440251E9C8FEF000CF1D3 /* Frameworks */,
 				CB7440261E9C8FEF000CF1D3 /* Resources */,
+				8819395A24DC03787C43979F /* [CP] Embed Pods Frameworks */,
+				42A791099EAEE91046A85D69 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,12 +292,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		42A791099EAEE91046A85D69 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-twiltter/Pods-twiltter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8819395A24DC03787C43979F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-twiltter/Pods-twiltter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E174C3F52E5EC36FB6FFE51C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CB7440241E9C8FEF000CF1D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CB74402E1E9C8FF0000CF1D3 /* ViewController.swift in Sources */,
+				CB6C9CD61E9DB04200BE9D0C /* TwitterClient.swift in Sources */,
 				CB74402C1E9C8FF0000CF1D3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,6 +495,7 @@
 		};
 		CB7440511E9C8FF0000CF1D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CAEDD13891B616F046CB67E /* Pods-twiltter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = twiltter/Info.plist;
@@ -420,6 +508,7 @@
 		};
 		CB7440521E9C8FF0000CF1D3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BA547AC5981CB555083CC01 /* Pods-twiltter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = twiltter/Info.plist;
@@ -503,6 +592,7 @@
 				CB7440521E9C8FF0000CF1D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CB7440531E9C8FF0000CF1D3 /* Build configuration list for PBXNativeTarget "twiltterTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +601,7 @@
 				CB7440551E9C8FF0000CF1D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CB7440561E9C8FF0000CF1D3 /* Build configuration list for PBXNativeTarget "twiltterUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +610,7 @@
 				CB7440581E9C8FF0000CF1D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
