@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		239A01B317CD4CD814CEF1D5 /* Pods_twiltter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF65724A2507797CB599ECBC /* Pods_twiltter.framework */; };
 		CB6C9CD61E9DB04200BE9D0C /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6C9CD51E9DB04200BE9D0C /* TwitterClient.swift */; };
+		CB6C9CD91E9DDA4000BE9D0C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6C9CD81E9DDA4000BE9D0C /* User.swift */; };
+		CB6C9CDB1E9DDA4F00BE9D0C /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6C9CDA1E9DDA4F00BE9D0C /* Tweet.swift */; };
 		CB74402C1E9C8FF0000CF1D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74402B1E9C8FF0000CF1D3 /* AppDelegate.swift */; };
 		CB74402E1E9C8FF0000CF1D3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74402D1E9C8FF0000CF1D3 /* LoginViewController.swift */; };
 		CB7440311E9C8FF0000CF1D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB74402F1E9C8FF0000CF1D3 /* Main.storyboard */; };
@@ -39,6 +41,8 @@
 		0BA547AC5981CB555083CC01 /* Pods-twiltter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twiltter.release.xcconfig"; path = "Pods/Target Support Files/Pods-twiltter/Pods-twiltter.release.xcconfig"; sourceTree = "<group>"; };
 		2CAEDD13891B616F046CB67E /* Pods-twiltter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twiltter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twiltter/Pods-twiltter.debug.xcconfig"; sourceTree = "<group>"; };
 		CB6C9CD51E9DB04200BE9D0C /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
+		CB6C9CD81E9DDA4000BE9D0C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CB6C9CDA1E9DDA4F00BE9D0C /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		CB7440281E9C8FF0000CF1D3 /* twiltter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twiltter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB74402B1E9C8FF0000CF1D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB74402D1E9C8FF0000CF1D3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,15 @@
 			name = API;
 			sourceTree = "<group>";
 		};
+		CB6C9CD71E9DDA2800BE9D0C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CB6C9CD81E9DDA4000BE9D0C /* User.swift */,
+				CB6C9CDA1E9DDA4F00BE9D0C /* Tweet.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		CB74401F1E9C8FEF000CF1D3 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +144,7 @@
 		CB74402A1E9C8FF0000CF1D3 /* twiltter */ = {
 			isa = PBXGroup;
 			children = (
+				CB6C9CD71E9DDA2800BE9D0C /* Models */,
 				CB6C9CD41E9DB00900BE9D0C /* API */,
 				CB74402B1E9C8FF0000CF1D3 /* AppDelegate.swift */,
 				CB74402D1E9C8FF0000CF1D3 /* LoginViewController.swift */,
@@ -345,6 +359,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB6C9CD91E9DDA4000BE9D0C /* User.swift in Sources */,
+				CB6C9CDB1E9DDA4F00BE9D0C /* Tweet.swift in Sources */,
 				CB74402E1E9C8FF0000CF1D3 /* LoginViewController.swift in Sources */,
 				CB6C9CD61E9DB04200BE9D0C /* TwitterClient.swift in Sources */,
 				CB74402C1E9C8FF0000CF1D3 /* AppDelegate.swift in Sources */,
