@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         TwitterClient.sharedInstance.fetchRequestToken(withPath: "oauth/request_token", method: "GET", callbackURL: NSURL(string:"cptwitterdemo://oauth") as! URL, scope: nil, success: { (requestToken : BDBOAuth1Credential?) -> Void in
             print("got request token")
             if let tokenStr = requestToken?.token {
-                let authUrl = URL(fileURLWithPath: "https://api.twitter.com/oauth/authorize?oauth_token=\(tokenStr)")
+                let authUrl = URL(string: "https://api.twitter.com/oauth/authorize?oauth_token=\(tokenStr)")!
                 UIApplication.shared.open(authUrl, options: [:], completionHandler: {
                     (success) in print("opened URL: \(authUrl)")})
             }
