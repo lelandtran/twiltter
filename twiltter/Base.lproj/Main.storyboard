@@ -56,14 +56,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="115" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H8L-ug-Vor">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wHa-jH-8gQ">
-                                    <rect key="frame" x="0.0" y="143" width="320" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Logout"/>
-                                    <connections>
-                                        <action selector="onLogout:" destination="rnP-ZT-uyK" eventType="touchUpInside" id="BRl-1V-1ZI"/>
-                                    </connections>
-                                </button>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="115" id="c3L-lm-zY9" customClass="TweetCell" customModule="twiltter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="115"/>
@@ -135,12 +127,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="H8L-ug-Vor" firstAttribute="top" secondItem="gE6-hl-8Bf" secondAttribute="bottom" constant="-64" id="6Xq-UT-Uhh"/>
                             <constraint firstAttribute="trailing" secondItem="H8L-ug-Vor" secondAttribute="trailing" id="DzC-xk-vlL"/>
+                            <constraint firstItem="H8L-ug-Vor" firstAttribute="top" secondItem="gE6-hl-8Bf" secondAttribute="bottom" constant="-64" id="IKI-Ph-qQR"/>
+                            <constraint firstItem="H4R-d6-Mzi" firstAttribute="top" secondItem="H8L-ug-Vor" secondAttribute="bottom" id="ImK-4K-cV3"/>
                             <constraint firstItem="H8L-ug-Vor" firstAttribute="leading" secondItem="Qxd-jV-bpc" secondAttribute="leading" id="aI6-hO-PCA"/>
-                            <constraint firstItem="H4R-d6-Mzi" firstAttribute="top" secondItem="H8L-ug-Vor" secondAttribute="bottom" id="fgY-7e-dYb"/>
+                            <constraint firstItem="H4R-d6-Mzi" firstAttribute="top" secondItem="H8L-ug-Vor" secondAttribute="bottom" id="cTU-EH-3VR"/>
                             <constraint firstAttribute="trailing" secondItem="H8L-ug-Vor" secondAttribute="trailing" id="tfX-Lw-zhD"/>
-                            <constraint firstItem="H4R-d6-Mzi" firstAttribute="top" secondItem="H8L-ug-Vor" secondAttribute="bottom" id="v1b-4K-jvL"/>
                             <constraint firstItem="H8L-ug-Vor" firstAttribute="leading" secondItem="Qxd-jV-bpc" secondAttribute="leading" id="ygZ-MP-4Gp"/>
                         </constraints>
                     </view>

@@ -18,6 +18,10 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.dataSource = self
         tableView.delegate = self
         
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), for: UIControlEvents.valueChanged)
+        tableView.insertSubview(refreshControl, at: 0)
+        
         TwitterClient.sharedInstance.homeTimeline(withParams: nil) { (tweets, error) in
             self.tweets = tweets
             print("reloading tableView in viewDidAppear")
@@ -46,6 +50,15 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
+    func refreshControlAction(_ refreshControl : UIRefreshControl){
+        TwitterClient.sharedInstance.homeTimeline(withParams: nil) { (tweets, error) in
+            self.tweets = tweets
+            print("reloading tableView in viewDidAppear")
+            self.tableView.reloadData()
+            refreshControl.endRefreshing()
+        }
+    }
+        
     
     /*
     // MARK: - Navigation
