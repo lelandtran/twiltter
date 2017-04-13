@@ -18,11 +18,9 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.dataSource = self
         tableView.delegate = self
         
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         TwitterClient.sharedInstance.homeTimeline(withParams: nil) { (tweets, error) in
             self.tweets = tweets
+            print("reloading tableView in viewDidAppear")
             self.tableView.reloadData()
         }
     }

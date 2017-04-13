@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func onLogin(_ sender: Any) {
         TwitterClient.sharedInstance.login() {
             (user : User?, error : Error?) in
@@ -33,8 +34,8 @@ class LoginViewController: UIViewController {
                 print("error logging in")
             }
         }
-        
     }
+    
 
 
 }

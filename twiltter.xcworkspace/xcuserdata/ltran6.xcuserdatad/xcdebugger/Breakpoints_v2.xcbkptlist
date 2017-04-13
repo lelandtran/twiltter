@@ -145,38 +145,6 @@
             endingLineNumber = "45"
             landmarkName = "homeTimeline(withParams:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "twiltter.TwitterClient.homeTimeline (withParams : Swift.Optional&lt;__ObjC.NSDictionary&gt;, completion : (Swift.Optional&lt;Swift.Array&lt;twiltter.Tweet&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "twiltter"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ltran6/Documents/CodePath/twiltter/twiltter/TwitterClient.swift"
-                  timestampString = "513734033.298375"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "27">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "twiltter.TwitterClient.(homeTimeline (withParams : Swift.Optional&lt;__ObjC.NSDictionary&gt;, completion : (Swift.Optional&lt;Swift.Array&lt;twiltter.Tweet&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "twiltter"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ltran6/Documents/CodePath/twiltter/twiltter/TwitterClient.swift"
-                  timestampString = "513734033.299614"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "27">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -198,23 +166,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "twiltter/LoginViewController.swift"
-            timestampString = "513734011.346662"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "onLogin(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "twiltter/TweetsViewController.swift"
