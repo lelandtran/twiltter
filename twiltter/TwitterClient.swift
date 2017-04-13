@@ -24,6 +24,31 @@ class TwitterClient: BDBOAuth1SessionManager {
         return Static.instance!
     }
     
+    func send(tweet: String, completion: @escaping (_ success: Bool, _ error: Error?) -> Void) {
+        self.post("1.1/statuses/update.json", parameters: ["status":tweet], progress: nil, success: { (operation: URLSessionDataTask, response: Any?) in
+            print("tweet successfully posted! \(tweet)")
+            completion(true, nil)
+        }, failure: { (operation: URLSessionDataTask?, error: Error) in
+            print("error posting tweet: \(tweet)")
+            completion(false, error)
+        })
+    }
+    
+    func homeTimeline(withParams : NSDictionary?, completion : @escaping (_ tweets: [Tweet]?, _ error: Error?) -> Void){
+        self.get("1.1/statuses/home_timeline.json", parameters: nil, progress: nil, success: { (operation :URLSessionDataTask, response : Any?) in
+            //            print("home timeline \(response)")
+            let tweets = Tweet.tweetsWith(array: (response as! [NSDictionary]))
+            //            for tweet in tweets {
+            //                print("tweet.text: \(tweet.text), created: \(tweet.createdAt!)")
+            //            }
+            completion(tweets, nil)
+        }, failure: { (operation :URLSessionDataTask?, error:Error) in
+            print("error in getting home timeline")
+            self.loginCompletion?(nil, error)
+            completion(nil, error)
+        })
+    }
+    
     func login(withCompletion : @escaping (_ user : User?, _ error : Error?) -> Void) {
         loginCompletion = withCompletion
         
@@ -40,22 +65,6 @@ class TwitterClient: BDBOAuth1SessionManager {
             self.loginCompletion?(nil, error)
         }
     }
-    
-    func homeTimeline(withParams : NSDictionary?, completion : @escaping (_ tweets: [Tweet]?, _ error: Error?) -> Void){
-        self.get("1.1/statuses/home_timeline.json", parameters: nil, progress: nil, success: { (operation :URLSessionDataTask, response : Any?) in
-//            print("home timeline \(response)")
-            let tweets = Tweet.tweetsWith(array: (response as! [NSDictionary]))
-//            for tweet in tweets {
-//                print("tweet.text: \(tweet.text), created: \(tweet.createdAt!)")
-//            }
-            completion(tweets, nil)
-        }, failure: { (operation :URLSessionDataTask?, error:Error) in
-            print("error in getting home timeline")
-            self.loginCompletion?(nil, error)
-            completion(nil, error)
-        })
-    }
-    
     func open(url : URL){
         fetchAccessToken(withPath: "oauth/access_token", method: "POST", requestToken: BDBOAuth1Credential(queryString:url.query), success: {(accessToken : BDBOAuth1Credential?) -> Void in
             print("Got the access token")

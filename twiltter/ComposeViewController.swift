@@ -31,6 +31,21 @@ class ComposeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onTweet(_ sender: Any) {
+        TwitterClient.sharedInstance.send(tweet: "This is a test") {
+            (success, error) in
+            if success {
+                print ("onTweet succeeded!")
+            } else {
+                print("something went wrong: \(error)")
+            }
+            
+        }
+        
+        dismiss(animated: true, completion: nil)
+        tweetTextView.resignFirstResponder()
+    }
+    
     @IBAction func onCancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
         tweetTextView.resignFirstResponder()

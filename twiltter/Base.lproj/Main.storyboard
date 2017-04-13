@@ -97,7 +97,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="OOj-ds-mfL" firstAttribute="leading" secondItem="Iyh-o6-fuL" secondAttribute="trailing" constant="8" id="4Cm-Od-2i0"/>
+                                                <constraint firstItem="OOj-ds-mfL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Iyh-o6-fuL" secondAttribute="trailing" constant="8" id="4Cm-Od-2i0"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Py1-ma-XSu" secondAttribute="bottom" constant="12" id="IPv-FC-pYU"/>
                                                 <constraint firstItem="Iyh-o6-fuL" firstAttribute="top" secondItem="BhY-Wm-T9y" secondAttribute="top" constant="8" id="Igj-TF-Dqg"/>
                                                 <constraint firstItem="Iyh-o6-fuL" firstAttribute="leading" secondItem="jCe-A4-1OS" secondAttribute="trailing" constant="8" id="OYd-rp-5x3"/>
@@ -183,7 +183,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="willoverwrite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJA-ng-Qk6">
                                 <rect key="frame" x="80" y="110" width="96" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.55120192307692306" green="0.55120192307692306" blue="0.55120192307692306" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4kG-Er-FlZ">
@@ -218,7 +218,11 @@
                                 <action selector="onCancel:" destination="R9N-pZ-Lq8" id="S3U-Nl-Elt"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Tweet" id="VfK-6T-N9H"/>
+                        <barButtonItem key="rightBarButtonItem" title="Tweet" id="VfK-6T-N9H">
+                            <connections>
+                                <action selector="onTweet:" destination="R9N-pZ-Lq8" id="7b2-T5-e94"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="nameLabel" destination="R7D-T4-YyN" id="0Vl-9e-PxS"/>

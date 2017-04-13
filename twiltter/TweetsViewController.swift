@@ -41,6 +41,9 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tweets != nil {
+            return min(20, (tweets?.count)!)
+        }
         return 20
     }
     
