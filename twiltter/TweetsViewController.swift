@@ -17,6 +17,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.estimatedRowHeight = 200
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), for: UIControlEvents.valueChanged)
@@ -60,14 +62,18 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
         
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let navigationController = segue.destination as! UINavigationController
+        let composeViewController = navigationController.topViewController as! ComposeViewController
+        print("prepared for segue to \(composeViewController)")
+        
     }
-    */
+    
 
 }

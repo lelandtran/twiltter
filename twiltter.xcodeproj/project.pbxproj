@@ -20,6 +20,7 @@
 		CB74404C1E9C8FF0000CF1D3 /* twiltterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74404B1E9C8FF0000CF1D3 /* twiltterUITests.swift */; };
 		CBBCA8E51E9EA8DC00A58865 /* TweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBCA8E41E9EA8DC00A58865 /* TweetsViewController.swift */; };
 		CBBCA8EA1E9EDD8800A58865 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBCA8E91E9EDD8800A58865 /* TweetCell.swift */; };
+		CBCE730D1E9FD8E2005BA6BC /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE730C1E9FD8E2005BA6BC /* ComposeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		CB74404D1E9C8FF0000CF1D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBBCA8E41E9EA8DC00A58865 /* TweetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsViewController.swift; sourceTree = "<group>"; };
 		CBBCA8E91E9EDD8800A58865 /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
+		CBCE730C1E9FD8E2005BA6BC /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		DF65724A2507797CB599ECBC /* Pods_twiltter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_twiltter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -184,6 +186,7 @@
 			children = (
 				CB74402D1E9C8FF0000CF1D3 /* LoginViewController.swift */,
 				CBBCA8E41E9EA8DC00A58865 /* TweetsViewController.swift */,
+				CBCE730C1E9FD8E2005BA6BC /* ComposeViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				CB6C9CD91E9DDA4000BE9D0C /* User.swift in Sources */,
 				CBBCA8EA1E9EDD8800A58865 /* TweetCell.swift in Sources */,
 				CB6C9CDB1E9DDA4F00BE9D0C /* Tweet.swift in Sources */,
+				CBCE730D1E9FD8E2005BA6BC /* ComposeViewController.swift in Sources */,
 				CBBCA8E51E9EA8DC00A58865 /* TweetsViewController.swift in Sources */,
 				CB74402E1E9C8FF0000CF1D3 /* LoginViewController.swift in Sources */,
 				CB6C9CD61E9DB04200BE9D0C /* TwitterClient.swift in Sources */,
