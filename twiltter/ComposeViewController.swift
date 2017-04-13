@@ -32,23 +32,52 @@ class ComposeViewController: UIViewController {
     }
     
     @IBAction func onTweet(_ sender: Any) {
-        TwitterClient.sharedInstance.send(tweet: "This is a test") {
-            (success, error) in
-            if success {
-                print ("onTweet succeeded!")
-            } else {
-                print("something went wrong: \(error)")
+        if isValidTweet() {
+            TwitterClient.sharedInstance.send(tweet: tweetTextView.text) {
+                (success, error) in
+                if success {
+                    print ("onTweet succeeded!")
+                    self.dismiss(animated: true, completion: nil)
+                    self.tweetTextView.resignFirstResponder()
+                } else {
+                    print("something went wrong: \(error)")
+                    self.present(self.alertError(title: "Oops!", message: "Oops! Something went wrong"), animated: true)
+                }
             }
-            
+        } else {
+            present(alertError(title: "Invalid", message: "The tweet is invalid"), animated: true)
         }
-        
-        dismiss(animated: true, completion: nil)
-        tweetTextView.resignFirstResponder()
     }
     
     @IBAction func onCancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
         tweetTextView.resignFirstResponder()
+    }
+    
+    func alertError(title: String, message: String) -> UIAlertController{
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+        
+        }
+        alertController.addAction(OKAction)
+        return alertController
+    }
+    
+    func isValidTweet() -> Bool {
+        return isValid(tweet: tweetTextView.text)
+    }
+    
+    func isValid(tweet: String?) -> Bool{
+        if tweet == nil {
+            return false
+        }
+        if tweet!.characters.count < 1 {
+            return false
+        }
+        if tweet!.characters.count > 140 {
+            return false
+        }
+        return true
     }
 
     /*
