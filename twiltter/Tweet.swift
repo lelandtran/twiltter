@@ -15,11 +15,13 @@ class Tweet: NSObject {
     var createdAtString : String?
     var createdAt : Date?
     var profileImageUrl : URL?
+    var id : Int?
     
     init(dictionary : NSDictionary){
         user = User(dictionary : dictionary["user"] as! NSDictionary)
         text = dictionary["text"] as? String
         createdAtString = dictionary["created_at"] as? String
+        id = dictionary["id"] as? Int
         let formatter = DateFormatter()
         formatter.dateFormat = "EEE MMM dd HH:mm:ss Z y"
         createdAt = formatter.date(from: createdAtString!)
