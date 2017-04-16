@@ -16,6 +16,7 @@ class Tweet: NSObject {
     var createdAt : Date?
     var profileImageUrl : URL?
     var id : Int?
+    var rawDictionary : NSDictionary?
     
     init(dictionary : NSDictionary){
         user = User(dictionary : dictionary["user"] as! NSDictionary)
@@ -25,6 +26,7 @@ class Tweet: NSObject {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEE MMM dd HH:mm:ss Z y"
         createdAt = formatter.date(from: createdAtString!)
+        rawDictionary = dictionary
     }
     
     class func tweetsWith(array : [NSDictionary]) -> [Tweet]{

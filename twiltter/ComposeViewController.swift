@@ -15,6 +15,8 @@ class ComposeViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
     
+    var inReplyTo: Tweet?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,7 +24,13 @@ class ComposeViewController: UIViewController {
         nameLabel.text = User.currentUser?.name
         screennameLabel.text = User.currentUser?.screenname
         profileImageView.setImageWith(URL(string: (User.currentUser?.profileImageUrl)!)!)
-        tweetTextView.text = ""
+        
+        if inReplyTo != nil {
+            tweetTextView.text = "@\((inReplyTo?.user?.screenname)!)"
+        } else {
+            tweetTextView.text = ""
+        }
+        
         tweetTextView.becomeFirstResponder()
     }
 
@@ -33,15 +41,31 @@ class ComposeViewController: UIViewController {
     
     @IBAction func onTweet(_ sender: Any) {
         if isValidTweet() {
-            TwitterClient.sharedInstance.send(tweet: tweetTextView.text) {
-                (success, error) in
-                if success {
-                    print ("onTweet succeeded!")
-                    self.dismiss(animated: true, completion: nil)
-                    self.tweetTextView.resignFirstResponder()
-                } else {
-                    print("something went wrong: \(error)")
-                    self.present(self.alertError(title: "Oops!", message: "Oops! Something went wrong"), animated: true)
+            if inReplyTo == nil {
+                TwitterClient.sharedInstance.send(tweet: tweetTextView.text) {
+                    (success, error) in
+                    if success {
+                        print ("onTweet succeeded!")
+                        self.dismiss(animated: true, completion: nil)
+                        self.tweetTextView.resignFirstResponder()
+                        self.inReplyTo = nil
+                    } else {
+                        print("something went wrong: \(error)")
+                        self.present(self.alertError(title: "Oops!", message: "Oops! Something went wrong"), animated: true)
+                    }
+                }
+            } else {
+                TwitterClient.sharedInstance.reply(tweet: tweetTextView.text, inReplyTo: inReplyTo) {
+                    (success, error) in
+                    if success {
+                        print ("onTweet reply succeeded!")
+                        self.dismiss(animated: true, completion: nil)
+                        self.tweetTextView.resignFirstResponder()
+                        self.inReplyTo = nil
+                    } else {
+                        print("something went wrong with the reply: \(error)")
+                        self.present(self.alertError(title: "Oops!", message: "Oops! Something went wrong with the reply"), animated: true)
+                    }
                 }
             }
         } else {
@@ -51,6 +75,7 @@ class ComposeViewController: UIViewController {
     
     @IBAction func onCancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+        self.inReplyTo = nil
         tweetTextView.resignFirstResponder()
     }
     

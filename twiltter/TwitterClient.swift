@@ -34,6 +34,37 @@ class TwitterClient: BDBOAuth1SessionManager {
         })
     }
     
+    func reply(tweet: String, inReplyTo: Tweet?, completion: @escaping (_ success: Bool, _ error: Error?) -> Void) {
+        self.post("1.1/statuses/update.json", parameters: ["status":tweet, "in_reply_to_status_id":(inReplyTo?.id)!], progress: nil, success: { (operation: URLSessionDataTask, response: Any?) in
+            print("reply successful: \(response)")
+            print("reply successfully posted! \(tweet)")
+            
+            completion(true, nil)
+        }, failure: { (operation: URLSessionDataTask?, error: Error) in
+            print("error posting tweet: \(tweet)")
+            completion(false, error)
+        })
+    }
+    
+    func retweet(tweetId: Int, completion: @escaping (_ success: Bool, _ error: Error?) -> Void) {
+        self.post("1.1/statuses/retweet/\(tweetId).json", parameters: nil, progress: nil, success: {
+            (operation: URLSessionDataTask, response: Any?) in
+            print("tweet successfully retweeted: \(tweetId)")
+            completion(true, nil)
+        }, failure: { (operation: URLSessionDataTask?, error: Error) in
+            print("error retweeting tweet \(tweetId)")
+            completion(false, error)
+        })
+    }
+    
+    func favorite(tweetId: Int, completion: @escaping (_ success: Bool, _ error: Error?) -> Void) {
+        self.post("1.1/favorites/create.json", parameters: ["id":tweetId], progress: nil, success: { (operation: URLSessionDataTask, response: Any?) in
+            print("favorited tweet \(tweetId)")
+            }, failure: { (operation: URLSessionDataTask?, error: Error) in
+                print("error favoriting tweet \(tweetId)")
+        })
+    }
+
     func homeTimeline(withParams : NSDictionary?, completion : @escaping (_ tweets: [Tweet]?, _ error: Error?) -> Void){
         self.get("1.1/statuses/home_timeline.json", parameters: nil, progress: nil, success: { (operation :URLSessionDataTask, response : Any?) in
             print("home timeline \(response)")

@@ -62,7 +62,7 @@ let userDidLogoutNotification = "userDidLogoutNotification"
                     UserDefaults.standard.set(data, forKey: currentUserKey)
                 } catch {
                     print("There was an error deserializing data")
-                    UserDefaults.standard.set(nil, forKey: currentUserKey)
+                    UserDefaults.standard.removeObject(forKey: currentUserKey)
                 }
             }
             else {
