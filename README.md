@@ -1,8 +1,8 @@
-# Project 3 - *Name of App Here*
+# Project 3 - *Twiltter*
 
-**Name of your app** is a basic twitter app to read and compose tweets from the [Twitter API](https://apps.twitter.com/).
+**Twiltter** is a basic twitter app to read and compose tweets from the [Twitter API](https://apps.twitter.com/).
 
-Time spent: **X** hours spent in total
+Time spent: **20** hours spent in total
 
 ## User Stories
 
@@ -38,14 +38,22 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/1zbvg30.gifv' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
 Describe any challenges encountered while building the app.
+
+I didn't have time to figure out how to add labels to the navigation bar programmatically. 
 I wish I had more time to think about refactoring code, but I think I'm finally starting to understand the Swift-way for MVC.
+
+Image credits:
+
+http://www.danilodemarco.com/
+https://www.iconfinder.com/icons/299063/heart_icon#size=128
+https://www.iconfinder.com/icons/115642/retweet_icon#size=128
 
 ## License
 
