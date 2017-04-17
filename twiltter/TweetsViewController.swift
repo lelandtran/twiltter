@@ -8,10 +8,13 @@
 
 import UIKit
 
-class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     var tweets : [Tweet]?
+    
+    var isMoreDataLoading = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,10 +44,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tweets != nil {
-            return min(20, (tweets?.count)!)
-        }
-        return 20
+        return tweets?.count ?? 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -53,6 +53,34 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.tweet = tweets![indexPath.row]
         }
         return cell
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if !isMoreDataLoading {
+            let scrollViewContentHeight = tableView.contentSize.height
+            let scrollOffsetThreshold = scrollViewContentHeight - tableView.bounds.size.height
+            
+            if (scrollView.contentOffset.y > scrollOffsetThreshold && tableView.isDragging) {
+                isMoreDataLoading = true
+                print("will load more data")
+                loadMoreData()
+            }
+        }
+    }
+    
+    func loadMoreData(){
+        TwitterClient.sharedInstance.homeTimeline(withParams: ["count":(tweets?.count)!+20]) { (newTweets, error) in
+            if error != nil {
+                print("error loading more data: \(error)")
+            } else {
+                print("finished loading more data: \(newTweets)")
+                if newTweets != nil {
+                    self.tweets = newTweets
+                    self.tableView.reloadData()
+                }
+            }
+            self.isMoreDataLoading = false
+        }
     }
     
     func refreshControlAction(_ refreshControl : UIRefreshControl){
