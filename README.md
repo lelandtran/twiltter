@@ -2,7 +2,7 @@
 
 **Twiltter** is a basic twitter app to read and compose tweets from the [Twitter API](https://apps.twitter.com/).
 
-Time spent: **20** hours spent in total
+Time spent: **18** hours spent in total
 
 ## User Stories
 
