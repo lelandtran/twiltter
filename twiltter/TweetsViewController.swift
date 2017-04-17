@@ -12,6 +12,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBOutlet weak var tableView: UITableView!
     var tweets : [Tweet]?
+    var loadingMoreView: InfiniteScrollActivityView?
     
     var isMoreDataLoading = false
     
@@ -27,11 +28,22 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), for: UIControlEvents.valueChanged)
         tableView.insertSubview(refreshControl, at: 0)
         
+        let frame = CGRect(x: 0, y: tableView.contentSize.height, width: tableView.bounds.size.width, height: InfiniteScrollActivityView.defaultHeight)
+        loadingMoreView = InfiniteScrollActivityView(frame: frame)
+        loadingMoreView!.isHidden = true
+        tableView.addSubview(loadingMoreView!)
+
+        var insets = tableView.contentInset
+        insets.bottom += InfiniteScrollActivityView.defaultHeight
+        tableView.contentInset = insets
+
         TwitterClient.sharedInstance.homeTimeline(withParams: nil) { (tweets, error) in
             self.tweets = tweets
             print("reloading tableView in viewDidAppear")
+            self.loadingMoreView!.stopAnimating()
             self.tableView.reloadData()
         }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,6 +75,9 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             if (scrollView.contentOffset.y > scrollOffsetThreshold && tableView.isDragging) {
                 isMoreDataLoading = true
                 print("will load more data")
+                let frame = CGRect(x: 0, y: tableView.contentSize.height, width: tableView.bounds.size.width, height: InfiniteScrollActivityView.defaultHeight)
+                loadingMoreView?.frame = frame
+                loadingMoreView!.startAnimating()
                 loadMoreData()
             }
         }
@@ -80,6 +95,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
             }
             self.isMoreDataLoading = false
+            self.loadingMoreView!.stopAnimating()
         }
     }
     

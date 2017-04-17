@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		239A01B317CD4CD814CEF1D5 /* Pods_twiltter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF65724A2507797CB599ECBC /* Pods_twiltter.framework */; };
 		CB64577A1EA304770023ECDD /* RetweetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6457791EA304770023ECDD /* RetweetButton.swift */; };
+		CB64577C1EA464360023ECDD /* InfiniteScrollActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64577B1EA464360023ECDD /* InfiniteScrollActivityView.swift */; };
 		CB6C9CD61E9DB04200BE9D0C /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6C9CD51E9DB04200BE9D0C /* TwitterClient.swift */; };
 		CB6C9CD91E9DDA4000BE9D0C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6C9CD81E9DDA4000BE9D0C /* User.swift */; };
 		CB6C9CDB1E9DDA4F00BE9D0C /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6C9CDA1E9DDA4F00BE9D0C /* Tweet.swift */; };
@@ -47,6 +48,7 @@
 		0BA547AC5981CB555083CC01 /* Pods-twiltter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twiltter.release.xcconfig"; path = "Pods/Target Support Files/Pods-twiltter/Pods-twiltter.release.xcconfig"; sourceTree = "<group>"; };
 		2CAEDD13891B616F046CB67E /* Pods-twiltter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twiltter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twiltter/Pods-twiltter.debug.xcconfig"; sourceTree = "<group>"; };
 		CB6457791EA304770023ECDD /* RetweetButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetweetButton.swift; sourceTree = "<group>"; };
+		CB64577B1EA464360023ECDD /* InfiniteScrollActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollActivityView.swift; sourceTree = "<group>"; };
 		CB6C9CD51E9DB04200BE9D0C /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
 		CB6C9CD81E9DDA4000BE9D0C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CB6C9CDA1E9DDA4F00BE9D0C /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				CBBCA8E91E9EDD8800A58865 /* TweetCell.swift */,
 				CB87F7131EA1ED7F00E89038 /* TweetActionCell.swift */,
 				CB6457791EA304770023ECDD /* RetweetButton.swift */,
+				CB64577B1EA464360023ECDD /* InfiniteScrollActivityView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB64577C1EA464360023ECDD /* InfiniteScrollActivityView.swift in Sources */,
 				CB6C9CD91E9DDA4000BE9D0C /* User.swift in Sources */,
 				CB87F7141EA1ED7F00E89038 /* TweetActionCell.swift in Sources */,
 				CBBCA8EA1E9EDD8800A58865 /* TweetCell.swift in Sources */,
