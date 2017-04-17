@@ -60,8 +60,10 @@ class TwitterClient: BDBOAuth1SessionManager {
     func favorite(tweetId: Int, completion: @escaping (_ success: Bool, _ error: Error?) -> Void) {
         self.post("1.1/favorites/create.json", parameters: ["id":tweetId], progress: nil, success: { (operation: URLSessionDataTask, response: Any?) in
             print("favorited tweet \(tweetId)")
+            completion(true, nil)
             }, failure: { (operation: URLSessionDataTask?, error: Error) in
                 print("error favoriting tweet \(tweetId)")
+                completion(false, error)
         })
     }
 

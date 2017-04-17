@@ -88,6 +88,7 @@ class ComposeViewController: UIViewController, UITextViewDelegate {
         charCountLabel.text = "\(charBufferCount)"
     }
     
+    // TODO: should move this to utility class
     func alertError(title: String, message: String) -> UIAlertController{
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
