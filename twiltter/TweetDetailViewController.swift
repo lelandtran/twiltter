@@ -13,7 +13,13 @@ class TweetDetailViewController: UIViewController, UITableViewDataSource, UITabl
     var tweet: Tweet?
     
     
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var createdAtLabel: UILabel!
+    @IBOutlet weak var tweetTextLabel: UILabel!
+    @IBOutlet weak var screennameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,7 +29,16 @@ class TweetDetailViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
+        nameLabel.text = tweet?.user?.name
+        screennameLabel.text = tweet?.user?.screenname
+        tweetTextLabel.text = tweet?.text
         
+        if let profileImageUrlString = tweet?.user?.profileImageUrl {
+            profileImageView.setImageWith(URL(string: profileImageUrlString)!)
+        }
+        let formatter = DateFormatter()
+        formatter.dateFormat = "M/d/yyyy hh:mm a"
+        createdAtLabel.text = formatter.string(from: (tweet?.createdAt)!)
     }
 
     override func didReceiveMemoryWarning() {

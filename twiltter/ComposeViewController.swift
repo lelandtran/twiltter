@@ -8,21 +8,24 @@
 
 import UIKit
 
-class ComposeViewController: UIViewController {
+class ComposeViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var tweetTextView: UITextView!
     @IBOutlet weak var screennameLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var charCountLabel: UILabel!
     
     var inReplyTo: Tweet?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tweetTextView.delegate = self
         // Do any additional setup after loading the view.
         nameLabel.text = User.currentUser?.name
         screennameLabel.text = User.currentUser?.screenname
+        
         profileImageView.setImageWith(URL(string: (User.currentUser?.profileImageUrl)!)!)
         
         if inReplyTo != nil {
@@ -30,7 +33,8 @@ class ComposeViewController: UIViewController {
         } else {
             tweetTextView.text = ""
         }
-        
+        let charBufferCount = 140 - tweetTextView.text.characters.count
+        charCountLabel.text = "\(charBufferCount)"
         tweetTextView.becomeFirstResponder()
     }
 
@@ -77,6 +81,11 @@ class ComposeViewController: UIViewController {
         dismiss(animated: true, completion: nil)
         self.inReplyTo = nil
         tweetTextView.resignFirstResponder()
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        let charBufferCount = 140 - tweetTextView.text.characters.count
+        charCountLabel.text = "\(charBufferCount)"
     }
     
     func alertError(title: String, message: String) -> UIAlertController{

@@ -282,7 +282,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="createdAtLabel" destination="STn-sd-Fzo" id="ATz-9E-Zar"/>
+                        <outlet property="nameLabel" destination="MxQ-mo-oeR" id="PPy-53-C0H"/>
+                        <outlet property="profileImageView" destination="dWr-Lt-wVT" id="u9W-WN-k05"/>
+                        <outlet property="screennameLabel" destination="3ew-86-a8e" id="IFg-W2-8lm"/>
                         <outlet property="tableView" destination="nSM-8Q-TZs" id="ME2-2w-Hxo"/>
+                        <outlet property="tweetTextLabel" destination="DmQ-gI-FHp" id="6c5-hy-cwb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KhJ-hb-eil" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -330,6 +335,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="140" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPY-2l-gCj">
+                                <rect key="frame" x="271" y="110" width="29" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -338,11 +349,13 @@
                             <constraint firstItem="4kG-Er-FlZ" firstAttribute="top" secondItem="CDN-vR-SyG" secondAttribute="bottom" constant="8" id="Dbs-yd-Dpd"/>
                             <constraint firstItem="uJA-ng-Qk6" firstAttribute="top" secondItem="R7D-T4-YyN" secondAttribute="bottom" constant="5" id="J6l-b3-Vxe"/>
                             <constraint firstItem="CDN-vR-SyG" firstAttribute="top" secondItem="djk-fx-3c6" secondAttribute="bottom" constant="20" id="JUn-vx-JyV"/>
+                            <constraint firstAttribute="trailing" secondItem="rPY-2l-gCj" secondAttribute="trailing" constant="20" id="Ofb-h0-Arg"/>
                             <constraint firstItem="uJA-ng-Qk6" firstAttribute="leading" secondItem="CDN-vR-SyG" secondAttribute="trailing" constant="10" id="Wwx-CJ-a3u"/>
                             <constraint firstItem="R7D-T4-YyN" firstAttribute="leading" secondItem="CDN-vR-SyG" secondAttribute="trailing" constant="10" id="XZs-Bh-2z2"/>
                             <constraint firstAttribute="trailing" secondItem="4kG-Er-FlZ" secondAttribute="trailing" constant="20" id="Xrl-m5-dAz"/>
                             <constraint firstItem="4kG-Er-FlZ" firstAttribute="leading" secondItem="4Gj-oo-U9C" secondAttribute="leading" constant="20" id="jQa-Ne-VcT"/>
                             <constraint firstItem="CDN-vR-SyG" firstAttribute="leading" secondItem="4Gj-oo-U9C" secondAttribute="leading" constant="20" id="n1u-GM-aLR"/>
+                            <constraint firstItem="rPY-2l-gCj" firstAttribute="centerY" secondItem="uJA-ng-Qk6" secondAttribute="centerY" id="vEg-2C-kcD"/>
                             <constraint firstItem="R7D-T4-YyN" firstAttribute="top" secondItem="djk-fx-3c6" secondAttribute="bottom" constant="20" id="vvq-gx-bvS"/>
                         </constraints>
                     </view>
@@ -359,6 +372,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="charCountLabel" destination="rPY-2l-gCj" id="b4e-7R-0zI"/>
                         <outlet property="nameLabel" destination="R7D-T4-YyN" id="0Vl-9e-PxS"/>
                         <outlet property="profileImageView" destination="CDN-vR-SyG" id="gif-Ex-pal"/>
                         <outlet property="screennameLabel" destination="uJA-ng-Qk6" id="8Cf-AS-tH1"/>
@@ -412,6 +426,6 @@
         <image name="retweet@1x" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nWM-Bn-RHN"/>
+        <segue reference="BWB-37-ZKm"/>
     </inferredMetricsTieBreakers>
 </document>
