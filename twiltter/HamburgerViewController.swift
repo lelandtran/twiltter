@@ -48,8 +48,11 @@ class HamburgerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let menuViewController = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+        
+        menuViewController.hamburgerViewController = self
+        self.menuViewController = menuViewController
     }
     
     @IBAction func onPanGesture(_ sender: UIPanGestureRecognizer) {

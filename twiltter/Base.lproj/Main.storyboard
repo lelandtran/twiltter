@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="G7h-5I-OGp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -34,21 +34,18 @@
                                 <rect key="frame" x="142" y="465" width="39" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Temp"/>
-                                <connections>
-                                    <segue destination="G7h-5I-OGp" kind="show" id="MWn-e5-ZYF"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="d7o-TS-KiO"/>
                     <connections>
-                        <segue destination="pWW-b5-ZDR" kind="presentation" identifier="loginSegue" id="kHD-Iu-8y4"/>
+                        <segue destination="G7h-5I-OGp" kind="presentation" identifier="loginSegue" id="3wp-yn-P4x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1628" y="-748"/>
+            <point key="canvasLocation" x="2473" y="-2359"/>
         </scene>
         <!--Tweets-->
         <scene sceneID="X6N-sK-amc">
@@ -482,7 +479,7 @@
         <!--Hamburger View Controller-->
         <scene sceneID="HxO-QD-EBn">
             <objects>
-                <viewController id="G7h-5I-OGp" customClass="HamburgerViewController" customModule="twiltter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HamburgerViewController" id="G7h-5I-OGp" customClass="HamburgerViewController" customModule="twiltter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vyG-Zb-j22"/>
                         <viewControllerLayoutGuide type="bottom" id="ikn-Hh-Nnu"/>
