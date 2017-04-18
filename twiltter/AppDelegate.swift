@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(userDidLogout), name: NSNotification.Name(userDidLogoutNotification), object: nil)
         
+        
         if User.currentUser != nil {
             // Go to the logged in screen
             print("Current user detected \(User.currentUser?.name)")
@@ -27,6 +28,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 storyboard.instantiateViewController(withIdentifier: "TweetsNavigationController") as UIViewController
             window?.rootViewController = vc
         }
+        
+        let hamburgerViewController = window!.rootViewController as! HamburgerViewController
+        
+        let menuViewController = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+        
+        menuViewController.hamburgerViewController = hamburgerViewController
+        hamburgerViewController.menuViewController = menuViewController
+        
         return true
     }
     

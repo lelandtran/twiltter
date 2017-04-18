@@ -22,6 +22,11 @@
 		CB74404C1E9C8FF0000CF1D3 /* twiltterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74404B1E9C8FF0000CF1D3 /* twiltterUITests.swift */; };
 		CB8665FA1EA139C600DC4645 /* TweetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8665F91EA139C600DC4645 /* TweetDetailViewController.swift */; };
 		CB87F7141EA1ED7F00E89038 /* TweetActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB87F7131EA1ED7F00E89038 /* TweetActionCell.swift */; };
+		CB9EF32F1EA5CE4A00052626 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9EF32E1EA5CE4A00052626 /* ProfileViewController.swift */; };
+		CB9EF3311EA5CE5D00052626 /* MentionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9EF3301EA5CE5D00052626 /* MentionsViewController.swift */; };
+		CB9EF3331EA5CF7600052626 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9EF3321EA5CF7600052626 /* MenuViewController.swift */; };
+		CB9EF3351EA5D06E00052626 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9EF3341EA5D06E00052626 /* MenuCell.swift */; };
+		CB9EF3371EA5D57300052626 /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9EF3361EA5D57300052626 /* HamburgerViewController.swift */; };
 		CBBCA8E51E9EA8DC00A58865 /* TweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBCA8E41E9EA8DC00A58865 /* TweetsViewController.swift */; };
 		CBBCA8EA1E9EDD8800A58865 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBCA8E91E9EDD8800A58865 /* TweetCell.swift */; };
 		CBCE730D1E9FD8E2005BA6BC /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE730C1E9FD8E2005BA6BC /* ComposeViewController.swift */; };
@@ -67,6 +72,11 @@
 		CB74404D1E9C8FF0000CF1D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB8665F91EA139C600DC4645 /* TweetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
 		CB87F7131EA1ED7F00E89038 /* TweetActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetActionCell.swift; sourceTree = "<group>"; };
+		CB9EF32E1EA5CE4A00052626 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CB9EF3301EA5CE5D00052626 /* MentionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionsViewController.swift; sourceTree = "<group>"; };
+		CB9EF3321EA5CF7600052626 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		CB9EF3341EA5D06E00052626 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		CB9EF3361EA5D57300052626 /* HamburgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
 		CBBCA8E41E9EA8DC00A58865 /* TweetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsViewController.swift; sourceTree = "<group>"; };
 		CBBCA8E91E9EDD8800A58865 /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		CBCE730C1E9FD8E2005BA6BC /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +206,10 @@
 				CB74402D1E9C8FF0000CF1D3 /* LoginViewController.swift */,
 				CBBCA8E41E9EA8DC00A58865 /* TweetsViewController.swift */,
 				CBCE730C1E9FD8E2005BA6BC /* ComposeViewController.swift */,
+				CB9EF32E1EA5CE4A00052626 /* ProfileViewController.swift */,
+				CB9EF3301EA5CE5D00052626 /* MentionsViewController.swift */,
+				CB9EF3321EA5CF7600052626 /* MenuViewController.swift */,
+				CB9EF3361EA5D57300052626 /* HamburgerViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -207,6 +221,7 @@
 				CB87F7131EA1ED7F00E89038 /* TweetActionCell.swift */,
 				CB6457791EA304770023ECDD /* RetweetButton.swift */,
 				CB64577B1EA464360023ECDD /* InfiniteScrollActivityView.swift */,
+				CB9EF3341EA5D06E00052626 /* MenuCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -396,17 +411,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB9EF3371EA5D57300052626 /* HamburgerViewController.swift in Sources */,
 				CB64577C1EA464360023ECDD /* InfiniteScrollActivityView.swift in Sources */,
+				CB9EF3331EA5CF7600052626 /* MenuViewController.swift in Sources */,
 				CB6C9CD91E9DDA4000BE9D0C /* User.swift in Sources */,
 				CB87F7141EA1ED7F00E89038 /* TweetActionCell.swift in Sources */,
 				CBBCA8EA1E9EDD8800A58865 /* TweetCell.swift in Sources */,
 				CB8665FA1EA139C600DC4645 /* TweetDetailViewController.swift in Sources */,
+				CB9EF3311EA5CE5D00052626 /* MentionsViewController.swift in Sources */,
 				CB6C9CDB1E9DDA4F00BE9D0C /* Tweet.swift in Sources */,
 				CBCE730D1E9FD8E2005BA6BC /* ComposeViewController.swift in Sources */,
 				CBBCA8E51E9EA8DC00A58865 /* TweetsViewController.swift in Sources */,
 				CB74402E1E9C8FF0000CF1D3 /* LoginViewController.swift in Sources */,
 				CB6C9CD61E9DB04200BE9D0C /* TwitterClient.swift in Sources */,
+				CB9EF32F1EA5CE4A00052626 /* ProfileViewController.swift in Sources */,
 				CB64577A1EA304770023ECDD /* RetweetButton.swift in Sources */,
+				CB9EF3351EA5D06E00052626 /* MenuCell.swift in Sources */,
 				CB74402C1E9C8FF0000CF1D3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
