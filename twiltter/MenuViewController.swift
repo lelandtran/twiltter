@@ -58,6 +58,10 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        
+        if indexPath.row == 0 {
+            ((viewControllers[indexPath.row] as! UINavigationController).topViewController as! ProfileViewController).user = User.currentUser
+        }
         hamburgerViewController.contentViewController = viewControllers[indexPath.row]
     }
 

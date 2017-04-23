@@ -19,6 +19,8 @@ class TweetCell: UITableViewCell {
     
     var tweet : Tweet! {
         didSet {
+            print("tweet: \(tweet.text)")
+            print("tweet created at \(tweet.createdAt)")
             tweetLabel.text = tweet.text
             nameLabel.text = tweet.user?.name
             screennameLabel.text = "@\((tweet.user?.screenname!)!)"

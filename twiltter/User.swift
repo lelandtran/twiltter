@@ -20,6 +20,10 @@ let userDidLogoutNotification = "userDidLogoutNotification"
     var screenname : String?
     var profileImageUrl : String?
     var tagline : String?
+    var coverImageUrl: String?
+    var tweetsCount: Int?
+    var followersCount: Int?
+    var followingCount: Int?
     var dictionary : NSDictionary?
     
     init(dictionary : NSDictionary) {
@@ -27,6 +31,10 @@ let userDidLogoutNotification = "userDidLogoutNotification"
         screenname = dictionary["screen_name"] as? String
         profileImageUrl = dictionary["profile_image_url"] as? String
         tagline = dictionary["description"] as? String
+        coverImageUrl = dictionary["profile_background_image_url"] as? String
+        tweetsCount = dictionary["statuses_count"] as? Int ?? 0
+        followersCount = dictionary["followers_count"] as? Int ?? 0
+        followingCount = dictionary["following"] as? Int ?? 0
         self.dictionary = dictionary as NSDictionary
     }
     

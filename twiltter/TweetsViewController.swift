@@ -62,6 +62,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! TweetCell
         if tweets != nil {
+            print("tweets![indexPath.row]: \(tweets![indexPath.row])")
             cell.tweet = tweets![indexPath.row]
         }
         return cell
