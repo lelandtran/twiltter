@@ -50,7 +50,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 ## Notes
 
 Describe any challenges encountered while building the app.
-I had a lot of trouble with adding the tap gesture recognizer to the home timeline profile images. I think I wasn't correctly adding the gesture recognizer/enabling user interaction. Instead, I could only add the gesture recognizer to the Tweet Detail view controller. Also, I couldn't figure out how to set the hamburger view controller's content view through that tap gesture, so when I perform the segue, I lose the hamburger view and can't go back. These are glaring flaws in my app that I couldn't figure out and this assignment did a number to my confidence since I couldn't complete the required features as expected.
+I had a lot of trouble with adding the tap gesture recognizer to the home timeline profile images. I think I wasn't correctly adding the gesture recognizer/enabling user interaction. When I tried to click on the profile images, the app would only register that the cell which contained the profile image had been selected, and would segue me to the Tweet Detail View Controller. Instead, I could only add the gesture recognizer to the Tweet Detail view controller. Also, I couldn't figure out how to set the hamburger view controller's content view through that tap gesture, so when I perform the segue, I lose the hamburger view and can't go back. These are glaring flaws in my app that I couldn't figure out and this assignment did a number to my confidence since I couldn't complete the required features as expected.
 
 ## License
 
